@@ -1,10 +1,13 @@
 import React from 'react'
 import { useContext , useState } from 'react'
 import { CartContext } from './CartContext'
+import { CartTotalContext } from './CartTotalContext'
 
 export default function QuantityBtn({productInfo}) {
 
     const {cartItems,setCartItems} = useContext(CartContext)
+    const {totalPriceInCart,setTotalPriceInCart} = useContext(CartTotalContext)
+
     
     //檢查購物車中是否已有該產品
     //findIndex()
@@ -43,6 +46,7 @@ export default function QuantityBtn({productInfo}) {
         }
         
         setNumInCart(numInCart+1)
+        setTotalPriceInCart(totalPriceInCart+productInfo.price)
     }
 
     const handleSubtract = ()=>{
@@ -61,6 +65,7 @@ export default function QuantityBtn({productInfo}) {
         }
 
         setNumInCart(numInCart-1)
+        setTotalPriceInCart(totalPriceInCart-productInfo.price)
     }
 
     return (

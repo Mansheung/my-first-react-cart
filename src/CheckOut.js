@@ -1,12 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Title from './Title'
 import { Link } from 'react-router-dom'
 import QuantityBtn from './QuantityBtn'
 import { CartContext } from './CartContext'
+import { CartTotalContext } from './CartTotalContext'
 
 export default function CheckOut() {
   
     const {cartItems} = useContext(CartContext)
+    const {totalPriceInCart} = useContext(CartTotalContext)
   
     let cartEmpty = cartItems.length <= 0 ? true : false
 
@@ -49,14 +51,14 @@ export default function CheckOut() {
                 <div id="checkOutSection">
                     {
                         <div>
-                            購買金額：{grandTotal}<br/>
+                            購買金額：{totalPriceInCart}<br/>
                         </div>
 
                     }
                     {
-                        grandTotal >= freeShipingFee ? 
+                        totalPriceInCart >= freeShipingFee ? 
                         <div>我們免費送貨</div> : 
-                        <div>還差 ${freeShipingFee-grandTotal} 免費送貨</div>
+                        <div>還差 ${freeShipingFee-totalPriceInCart} 免費送貨</div>
                     }
                 </div>
             </div>
