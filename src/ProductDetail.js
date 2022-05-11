@@ -41,23 +41,25 @@ export default function ProductDetail() {
     
 
     return (
-        <div>
+        <div class="product-detail">
             
             { productDetail &&
 
-                <div>
+                <div >
             
-                <Title mainTitle={productDetail.name+'產品資料'}/>
+                    <Title mainTitle={productDetail.name+' - '+'產品詳情'}/>
 
-                <img src={process.env.PUBLIC_URL+'/my_first_cart_img/'+productDetail.image}></img><br/>
-                <p>名稱：{productDetail.name}</p>
-                <p>售價：${productDetail.price}</p>
-                <p>描述：{productDetail.description}</p>
+                    <div class='product-detail-flex'>
+                        <img src={process.env.PUBLIC_URL+'/my_first_cart_img/'+productDetail.image} ></img><br/>
+                        
+                        <p>名稱：{productDetail.name}</p>
+                        <p>售價：${productDetail.price}</p>
+                        <p>描述：{productDetail.description}</p>
+                    
 
-
-                <QuantityBtn productInfo={productDetail} />
-
-                <Link to="/">回到產品列表</Link>
+                        <QuantityBtn productInfo={productDetail} />
+                    </div>
+                   
 
                 </div>
 

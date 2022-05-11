@@ -4,7 +4,14 @@ export default function Title(props) {
   return (
     <div>
 
-        <h1 style={{backgroundColor:'#1A2B81',color:'white',textAlign:'center'}}>
+        <h1 style={
+          {backgroundColor:'#737373',
+          color:'white',
+          textAlign:'center',
+          margin:'20px 50px 50px 50px',
+          fontSize:'large',
+          padding:'5px',
+        }}>
             {props.mainTitle}
         </h1>
       

@@ -11,7 +11,7 @@ export default function ProductList() {
         {"id" : 3, "name" : "芒果", "price" : 4, "image" : "mango.jpg","description" : "新鮮芒果500克，宜做甜品"},
         {"id" : 4, "name" : "西瓜", "price" : 20, "image" : "watermelon.jpg","description" : "新鮮西瓜2公斤，夏季必備"},
         {"id" : 5, "name" : "藍莓", "price" : 10, "image" : "blueberry.jpg","description" : "新鮮藍莓50克，補眼之寶"},
-        {"id" : 6, "name" : "白蘿蔔", "price" : 5, "image" : "white-carrot.jpg","description" : "新鮮白蘿蔔1公斤，宜煲湯"},
+        {"id" : 6, "name" : "白蘿蔔", "price" : 5, "image" : "white-carrot2.jpg","description" : "新鮮白蘿蔔1公斤，宜煲湯"},
     ]
 
     
@@ -21,22 +21,25 @@ export default function ProductList() {
 
        
 
-        <Title mainTitle="請選擇產品"/>
+        <Title mainTitle="產品列表"/>
 
-        <div>
-            {
-                productList.map(product=>(
-                    <div key={product.id}>
-                        {product.name}<br/>
-                        {product.price}<br/>
-                        <Link to={'/product/'+product.id}>
-                        <img src={process.env.PUBLIC_URL+'/my_first_cart_img/'+product.image}></img><br/>
-                        </Link>
-                        {product.description}<br/>
-                        <QuantityBtn productInfo={product} />
-                    </div>
-                ))
-            }
+        <div class="container">
+            <div class='row'>
+        
+                {
+                    productList.map(product=>(
+                        <div key={product.id}  class='col-lg-4 col-md-6 col-sm-12 d-flex flex-column bd-highlight mb-3' >
+                            <Link to={'/product/'+product.id}>
+                                <img src={process.env.PUBLIC_URL+'/my_first_cart_img/'+product.image} class='product-img border border-secondary' ></img><br/>
+                            </Link>
+                            <div class="p-2 bd-highlight product-title">{product.name} - {product.description}</div><br/>
+                            <div class="p-2 bd-highlight product-price" >NT. {product.price}</div><br/>
+        
+                            <div class="p-2 bd-highlight "><QuantityBtn productInfo={product} /></div>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     </div>
   )

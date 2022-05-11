@@ -11,3 +11,116 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+nav a {
+  color: #737373;
+  font-weight: bold;
+  font-size:1.2rem;
+  text-decoration:none;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #737373;
+  color:white;
+}
+
+.flex-nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.link-text {
+  text-decoration:none;
+  color: #737373;
+}
+.link-text:hover {
+  color: #737373;
+}
+
+
+.title-format {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-top:30px;
+}
+
+.product-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.product-title {
+  height: 40px;
+}
+
+.product-price {
+  height:20px
+}
+
+.add-to-bag-button {
+  width: 100%;
+  height: 30px;
+  font-size: small;
+  background-color: #737373;
+  color:white;
+  border-style:none;
+  
+}
+
+.add-to-bag-button:hover {
+  font-size: medium;
+}
+
+.quantity-button {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 100%;
+  height: 30px;
+  font-size: large;
+  background-color: #737373;
+  color:white;
+  border-style:none;
+}
+
+.m-side-20p {
+  margin: 0 20px;
+}
+
+.my-mouse-pointer {
+  cursor: pointer;
+}
+
+.product-detail-flex {
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom: 100px;
+}
+
+.product-detail div div .add-to-bag-button {
+  width: 200px;
+}
+
+.product-detail div div .quantity-button {
+  width: 200px;
+}
+
+.total-price-button-decoration a {
+  background-color: #737373;
+  color:white;
+  font-weight: bold;
+  font-size:medium;
+  text-decoration:none;
+  padding: 10px;
+}
+
+.total-price-button-decoration a:hover {
+  background-color: #737373;
+  color:white;
+}

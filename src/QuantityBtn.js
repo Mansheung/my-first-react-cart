@@ -72,11 +72,11 @@ export default function QuantityBtn({productInfo}) {
         <div>
             {
                 (numInCart === 0) ?
-                <button onClick={handleAdd}>加入購物車</button> :
-                <div>
-                    <span onClick={handleSubtract}>-</span>
-                    <span>{numInCart}</span>
-                    <span onClick={handleAdd}>+</span>
+                <button onClick={handleAdd} class="add-to-bag-button">ADD TO BAG</button> :
+                <div class="quantity-button">
+                    <span onClick={handleSubtract} class="my-mouse-pointer"> - </span>
+                    <span class="m-side-20p">{numInCart}</span>
+                    <span onClick={handleAdd} class="my-mouse-pointer"> + </span>
                 </div>
             }
         </div>
